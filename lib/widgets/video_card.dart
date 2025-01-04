@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:movie_catalog/controllers/movie_detail_screen_controller.dart';
-import 'package:movie_catalog/utils/helpers.dart';
-import 'package:movie_catalog/views/cast_screen.dart';
-import 'package:movie_catalog/widgets/poster.dart';
 
 import '../models/video.dart';
 
@@ -16,8 +11,7 @@ class VideoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        decoration:
-            BoxDecoration(color: Theme.of(context).colorScheme.background),
+        decoration: BoxDecoration(color: Theme.of(context).colorScheme.surface),
         height: 70,
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
         child: Column(

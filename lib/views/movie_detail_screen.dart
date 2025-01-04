@@ -27,38 +27,18 @@ class MovieDetailScreen extends StatelessWidget {
               : SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
+                      spacing: 8.0,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const BackdropWrapper(),
-                        const SizedBox(
-                          height: 10,
-                        ),
                         Text(
-                          '${c.movie.value.title} (${DateTime.tryParse(c.movie.value.releaseDate.toString())?.year ?? ''})',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
+                            '${c.movie.value.title} (${DateTime.tryParse(c.movie.value.releaseDate.toString())?.year ?? ''})',
+                            style: Theme.of(context).textTheme.headlineLarge),
                         if (c.movie.value.overview != null)
                           Text(
                             c.movie.value.overview ?? '',
-                            style: Theme.of(context).textTheme.titleSmall,
                           ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        Text(
-                          c.movie.value.overview ?? 'Sin descripción.',
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
                         const GenresChips(),
-                        const SizedBox(
-                          height: 8,
-                        ),
                         const Row(
                           children: [
                             CastButton(),
@@ -68,12 +48,7 @@ class MovieDetailScreen extends StatelessWidget {
                             VideosButton()
                           ],
                         ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
+                        const Divider(),
                         if (c.images.isNotEmpty) const ImagesRow()
                       ]),
                 ),

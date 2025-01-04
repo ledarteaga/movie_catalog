@@ -9,32 +9,29 @@ class VideosButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12))),
-      color: Theme.of(context).colorScheme.background,
-      elevation: 60,
+    return OutlinedButton(
       onPressed: () {
         Get.bottomSheet(
             SizedBox(
                 height: MediaQuery.of(context).size.height / 5,
                 child: const VideosRow()),
             persistent: false,
-            backgroundColor: Colors.white,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12),
               topRight: Radius.circular(12),
             )));
       },
-      child: const Row(
+      child: Row(
+        spacing: 8.0,
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.play_arrow),
-          SizedBox(
-            width: 8,
+          Text(
+            'Videos',
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
-          Text('Videos'),
         ],
       ),
     );

@@ -10,7 +10,8 @@ const language = "es";
 
 final $http = Dio(BaseOptions(
   baseUrl: baseUrl,
-  queryParameters: {'api_key': apiKey, 'language': 'es'},
+  headers: {'Accept': 'application/json', 'Authorization': 'Bearer $apiKey'},
+  queryParameters: {'language': 'es'},
 ));
 
 InterceptorsWrapper jsonDecodeInterceptor = InterceptorsWrapper(

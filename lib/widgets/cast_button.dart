@@ -13,22 +13,19 @@ class CastButton extends StatelessWidget {
   Widget build(BuildContext context) {
     var c = Get.find<MovieDetailScreenController>();
 
-    return MaterialButton(
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12))),
-      color: Theme.of(context).colorScheme.background,
-      elevation: 60,
+    return OutlinedButton(
       onPressed: () {
         Get.to(() => CastScreen(movieId: c.movie.value.id ?? 0));
       },
-      child: const Row(
+      child: Row(
+        spacing: 8.0,
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.people),
-          SizedBox(
-            width: 8,
+          Text(
+            'Reparto',
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
-          Text('Reparto'),
         ],
       ),
     );

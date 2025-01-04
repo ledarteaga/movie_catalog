@@ -53,14 +53,11 @@ String getProfilePath(String path) {
 }
 
 void showSnackbar(String title, {String? message, Color color = Colors.red}) {
-  Get.snackbar(
-    title,
-    message ?? '',
-    snackPosition: SnackPosition.TOP,
-    duration: const Duration(seconds: 3),
-    borderRadius: 13,
-    backgroundColor: color.withOpacity(0.2),
-    borderColor: color,
-    isDismissible: true,
-  );
+  Get.snackbar(title, message ?? '',
+      snackPosition: SnackPosition.TOP,
+      duration: const Duration(seconds: 3),
+      borderRadius: 13,
+      backgroundColor: color.withAlpha(100),
+      isDismissible: true,
+      borderWidth: 5.0);
 }
