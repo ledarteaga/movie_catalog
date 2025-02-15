@@ -4,6 +4,7 @@ import 'images.dart';
 
 @immutable
 class Configuration {
+  final String language = "es";
   final images = Images();
   final List<String> changeKeys = [
     "adult",

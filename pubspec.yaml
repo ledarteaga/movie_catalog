@@ -39,6 +39,8 @@ dependencies:
   dio: ^5.4.0
   cached_network_image: ^3.3.1
   flutter_dotenv: ^5.1.0
+  flutter_inappwebview: ^6.1.5
+  flutter_rating: ^2.0.2
 
 dev_dependencies:
   flutter_test:

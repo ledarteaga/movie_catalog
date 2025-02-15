@@ -12,7 +12,7 @@ class VideosButton extends StatelessWidget {
     return MaterialButton(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12))),
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       elevation: 60,
       onPressed: () {
         Get.bottomSheet(

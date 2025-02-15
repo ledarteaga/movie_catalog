@@ -2,14 +2,16 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:dio/dio.dart' as dio;
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie_catalog/controllers/auth_controller.dart';
 import 'package:movie_catalog/controllers/configurations_controller.dart';
 import 'package:movie_catalog/models/movie_details/genre.dart';
 import 'package:movie_catalog/utils/api_helpers.dart';
 
 import '../models/entities.dart';
 import '../utils/helpers.dart';
+import '../views/account_screen.dart';
+import '../views/login_screen.dart';
 
 class HomeScreenController extends GetxController {
   var c = Get.find<ConfigurationsController>();
@@ -78,6 +80,16 @@ class HomeScreenController extends GetxController {
 
   Future<void> fetchDiscover() async {
     upcoming.value = await fetchMovies('dicover');
+  }
+
+  void onUserButtonPress() {
+    var c = Get.put(AuthController());
+
+    if (c.isLoggedIn == true) {
+      Get.to(() => const AccountScreen(), fullscreenDialog: true);
+    } else {
+      Get.to(() => const LoginScreen(), fullscreenDialog: true);
+    }
   }
 
   @override

@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:movie_catalog/controllers/discover_screen_controller.dart';
 import 'package:movie_catalog/utils/helpers.dart';
 import 'package:movie_catalog/views/movie_detail_screen.dart';
-import 'package:movie_catalog/widgets/poster_scrollview.dart';
 
 import '../models/models.dart';
 import '../widgets/widgets.dart';
@@ -78,7 +77,7 @@ class MovieRow extends StatelessWidget {
                     height: 4,
                   ),
                   Text(
-                    movie.releaseDate.year.toString(),
+                    movie.releaseDate?.year.toString() ?? '',
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ],

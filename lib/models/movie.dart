@@ -9,7 +9,7 @@ class Movie {
   final String originalLanguage;
   final String originalTitle;
   final double popularity;
-  final DateTime releaseDate;
+  final DateTime? releaseDate;
   final bool video;
   final num voteAverage;
   final num voteCount;
@@ -41,7 +41,9 @@ class Movie {
         originalLanguage = item["original_language"],
         originalTitle = item["original_title"],
         popularity = item["popularity"].toDouble(),
-        releaseDate = DateTime.parse(item["release_date"]),
+        releaseDate = item["release_date"] == ''
+            ? null
+            : DateTime.parse(item["release_date"]),
         video = item["video"],
         voteAverage = item["vote_average"],
         genreIds = item['genre_ids'],

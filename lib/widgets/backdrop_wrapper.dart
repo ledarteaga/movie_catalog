@@ -19,7 +19,7 @@ class BackdropWrapper extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 300,
+      height: 410,
       child: Stack(alignment: Alignment.bottomCenter, children: [
         if (c.movie.value.backdropPath != null)
           BackdropImage(path: c.movie.value.backdropPath!),

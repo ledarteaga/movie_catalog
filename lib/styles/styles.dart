@@ -14,6 +14,10 @@ ThemeData AppTheme = ThemeData(
   buttonTheme: const ButtonThemeData(
     buttonColor: AppColors.buttonBackground,
   ),
+  iconButtonTheme: IconButtonThemeData(
+      style: ButtonStyle(
+    iconColor: WidgetStatePropertyAll(AppColors.iconColor),
+  )),
   outlinedButtonTheme: OutlinedButtonThemeData(
       style: ButtonStyle(
           iconColor: WidgetStatePropertyAll(AppColors.iconColor),
@@ -40,6 +44,8 @@ ThemeData AppTheme = ThemeData(
     titleMedium: TextStyle(color: AppColors.textColor),
     titleLarge: TextStyle(color: AppColors.textColor),
     headlineLarge:
+        TextStyle(color: AppColors.textColor, fontWeight: FontWeight.bold),
+    headlineMedium:
         TextStyle(color: AppColors.textColor, fontWeight: FontWeight.bold),
   ),
   chipTheme: const ChipThemeData(

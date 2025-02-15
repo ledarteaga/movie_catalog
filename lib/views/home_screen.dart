@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie_catalog/controllers/auth_controller.dart';
 import 'package:movie_catalog/controllers/configurations_controller.dart';
 import 'package:movie_catalog/controllers/home_screen_controller.dart';
+import 'package:movie_catalog/views/login_screen.dart';
 
 import '../widgets/widgets.dart';
 
@@ -11,13 +13,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ConfigurationsController());
+    Get.put(AuthController());
 
     final c = Get.put(HomeScreenController());
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Movies'),
-      ),
+      appBar: AppBar(title: const Text('Movies'), actions: [
+        IconButton(
+            style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(Colors.transparent)),
+            onPressed: () => {},
+            icon: Icon(Icons.search)),
+        IconButton(
+            style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(Colors.transparent)),
+            onPressed: c.onUserButtonPress,
+            icon: Icon(Icons.person)),
+      ]),
       body: Obx(() => SizedBox(
             height: double.infinity,
             child: c.isLoading.value

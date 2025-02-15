@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +7,12 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 const baseUrl = "https://api.themoviedb.org/3/";
 final apiKey = dotenv.env['API_TOKEN'];
-const language = "es";
+final language = Platform.localeName.split('_')[0];
 
 final $http = Dio(BaseOptions(
   baseUrl: baseUrl,
   headers: {'Accept': 'application/json', 'Authorization': 'Bearer $apiKey'},
-  queryParameters: {'language': 'es'},
+  queryParameters: {'language': language},
 ));
 
 InterceptorsWrapper jsonDecodeInterceptor = InterceptorsWrapper(
