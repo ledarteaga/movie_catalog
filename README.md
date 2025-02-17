@@ -34,3 +34,10 @@ Interfaz de usuario intuitiva y fácil de usar.
 
 ## Capturas de Pantalla:
 
+![Simulator Screenshot - iPhone 16 - 2025-02-16 at 22 19 38](https://github.com/user-attachments/assets/7fb846dd-5373-4a89-a575-b9cc468d5025)
+![Simulator Screenshot - iPhone 16 - 2025-02-16 at 22 19 53](https://github.com/user-attachments/assets/c1b1af2d-c3a0-488d-8e0b-7374b00d4285)
+![Simulator Screenshot - iPhone 16 - 2025-02-16 at 22 20 14](https://github.com/user-attachments/assets/5af3da64-d4c4-4e57-93b0-b16d82c141e3)
+![Simulator Screenshot - iPhone 16 - 2025-02-16 at 22 19 45](https://github.com/user-attachments/assets/ccab107a-004e-4dbf-80b2-a981dc3b3845)
+
+
+
